@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+   
+  <div class="container">
+    <div class="row">
+        <% records.forEach(function(row){%>
+        <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><%= title %></div>
+                     </div>  
+                <div class="panel-body" >
+                    <form action="/update/" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                        <input type="hidden" name="id" value="<%= row.id %>">
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group">
+                            <label for="name" class="col-md-3 control-label">Farmer's Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="name" value="<%= row.name %>" placeholder="Farmer's Name">
+                            </div>
+                        </div>
+                          
+                        <div class="form-group">
+                            <label for="fname" class="col-md-3 control-label">Farmer's Father Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="fname" value="<%= row.fname %>" placeholder="Farmer's Father Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mnum" class="col-md-3 control-label">Mobile NO</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="mnum" value="<%= row.mnum %>" placeholder="Mobile NO">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tland" class="col-md-3 control-label">Total land (in percentage)</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="tland" value="<%= row.tland %>" placeholder="Total land (in percentage)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="crobi" class="col-md-3 control-label">Crops in Robi Season</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="crobi" value="<%= row.crobi %>" placeholder="Crops in Robi Season">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ckharif-1" class="col-md-3 control-label">Crops in Kharif Season-1</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="ckharif-1" value="<%= row.ckharif_1 %>" placeholder="Crops in Kharif Season-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ckharif_2" class="col-md-3 control-label">Crops in Kharif Season-2</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="ckharif_2" value="<%= row.ckharif_2 %>" placeholder="Crops in Kharif Season-2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="irrigation" class="col-md-3 control-label">Does the farmer have any irrigation machine?</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="irrigation" value="<%= row.irrigation %>" placeholder="Does the farmer have any irrigation machine?">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groups" class="col-md-3 control-label">Group number of the farmer created by the SAOO</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="groups" value="<%= row.groups %>" placeholder="Group number of the farmer created by the SAOO">
+                            </div>
+                        </div>
+                            
+                        
+                        
+
+                        <div class="form-group">
+                            <!-- Button -->                                        
+                            <div class="col-md-offset-3 col-md-9">
+                            <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </form>
+                 </div>
+            </div>
+
+       
+       
+        
+ </div> 
+ <% }) %>
+    </div>
+  </div>
+  </body>
+</html>
